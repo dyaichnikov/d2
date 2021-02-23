@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/d2
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: admin
+
+d2:
+  migration:
+    schema: d2

@@ -1,0 +1,4 @@
+amazon:
+  s3:
+    image-bucket: d2-images
+    key-prefix: photos
