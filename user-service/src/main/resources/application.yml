@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8081
 
 spring:
   datasource:
@@ -13,8 +13,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-
-amazon:
-  s3:
-    image-bucket: d2-images
-    key-prefix: photos

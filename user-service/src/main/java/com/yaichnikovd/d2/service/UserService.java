@@ -5,11 +5,13 @@ import com.yaichnikovd.d2.data.mapper.UserMapper;
 import com.yaichnikovd.d2.data.repository.UserRepository;
 import com.yaichnikovd.d2.dto.UserDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
+@Service
 @RequiredArgsConstructor
 public class UserService {
 

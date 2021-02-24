@@ -12,6 +12,7 @@ import com.yaichnikovd.d2.dto.ImageMetadataDTO;
 import com.yaichnikovd.d2.properties.S3Properties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 import static java.lang.String.format;
 import static org.apache.commons.lang.RandomStringUtils.randomAlphanumeric;
 
+@Service
 @RequiredArgsConstructor
 @Slf4j
 public class ImageService {
