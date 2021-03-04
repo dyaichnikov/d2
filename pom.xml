@@ -11,7 +11,6 @@
         <module>image-service-api</module>
         <module>user-service-db-migration</module>
         <module>image-service-db-migration</module>
-        <module>discovery-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

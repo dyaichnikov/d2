@@ -1,6 +1,9 @@
 package com.yaichnikovd.d2.data.domain;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Length;
 
@@ -32,5 +35,4 @@ public class User {
 
     @Email
     private String email;
-
 }

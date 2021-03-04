@@ -9,11 +9,6 @@ spring:
     username: admin
     password: admin
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
 amazon:
   s3:
     image-bucket: d2-images
