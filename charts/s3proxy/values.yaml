@@ -1,0 +1,33 @@
+# name is the application name
+name: "s3proxy"
+
+# replicas is the number of desired pods
+replicas: 1
+
+# image is the s3proxy image name
+image: "andrewgaul/s3proxy"
+
+# containerPort is the exposed container port
+containerPort: 80
+
+# envs is the envs passed to container
+envs:
+  s3proxyAuthtorization:
+    name: "S3PROXY_AUTHORIZATION"
+    value: "none"
+
+# volumes is the data that describes volumes and volumeMounts
+volumes:
+  dataVolume:
+    name: "data-volume"
+    mountPath: "/data"
+    hostPath: ""
+
+# serviceType is the service type
+serviceType: "NodePort"
+
+# servicePorts is the ports exposed from the service
+servicePorts:
+  tcp:
+    protocol: "TCP"
+    port: 80
