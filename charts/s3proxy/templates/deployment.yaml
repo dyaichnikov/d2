@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}-deployment
+  labels:
+    app: {{ .Values.name }}
+spec:
+  replicas: {{ .Values.s3proxyReplicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      containers:
+        - name: {{ .Values.name }}
+          image: {{ .Values.image }}
+          env:
+            - name: {{ .Values.envs.s3proxyAuthtorization.name }}
+              value: {{ .Values.envs.s3proxyAuthtorization.value }}
+          ports:
+            - containerPort: {{ .Values.containerPort }}
+          volumeMounts:
+            - mountPath: {{ .Values.volumes.dataVolume.mountPath }}
+              name: {{ .Values.volumes.dataVolume.name }}
+      volumes:
+        - name: {{ .Values.volumes.dataVolume.name }}
+          hostPath:
+            path: {{ .Values.volumes.dataVolume.hostPath }}
