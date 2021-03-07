@@ -9,3 +9,8 @@ target/
 *.iws
 *.iml
 *.ipr
+
+### d2-ui ###
+node_modules/
+npm-debug.*
+debug.log
