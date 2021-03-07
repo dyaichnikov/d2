@@ -1,0 +1,15 @@
+.footer {
+
+  &__text {
+    text-align: left;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .footer {
+
+    &__text {
+      text-align: center;
+    }
+  }
+}
