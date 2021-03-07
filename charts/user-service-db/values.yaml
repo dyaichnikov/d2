@@ -1,0 +1,35 @@
+name: "user-service-db"
+
+dbName: "d2"
+
+superUser:
+  name: "admin"
+  password: "admin"
+
+envs:
+  dbName:
+    name: "POSTGRES_DB"
+    value: "d2"
+  username:
+    name: "POSTGRES_USER"
+    value: "admin"
+  password:
+    name: "POSTGRES_PASSWORD"
+    value: "admin"
+
+image: "postgres"
+
+storageClassName: "manual"
+storageCapacity: "10Gi"
+accessMode: "ReadWriteMany"
+strategyType: "Recreate"
+containerPort: 5432
+
+volumes:
+  dataVolume:
+    name: "data-volume"
+    mountPath: "/var/lib/postgresql/data"
+    hostPath: ""
+
+exposedPort: 5432
+clusterIP: "None"
