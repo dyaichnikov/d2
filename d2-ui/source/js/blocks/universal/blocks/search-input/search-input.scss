@@ -1,0 +1,36 @@
+.search-input {
+  align-self: flex-end;
+
+  &__input {
+    padding: 5px 10px;
+    width: 100%;
+    border: 1px solid $main-border-color;
+    background-color: rgb(250, 250, 250);
+    transition: border-color $transition-duration;
+
+    &::placeholder {
+      text-align: center;
+      transition: opacity $transition-duration;
+    }
+
+    &:hover {
+      border-color: $black-color;
+    }
+
+    &:hover::placeholder,
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .search-input {
+    align-self: auto;
+
+    &__input::placeholder {
+      background: url("../img/search.svg") no-repeat 20% center;
+      background-size: contain;
+    }
+  }
+}
