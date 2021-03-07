@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  strategy:
+    type: {{ .Values.strategyType}}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      containers:
+        - image: {{ .Values.image }}
+          name: {{ .Values.name }}
+          env:
+            - name: {{ .Values.envs.dbName.name }}
+              value: {{ .Values.envs.dbName.value }}
+            - name: {{ .Values.envs.username.name }}
+              value: {{ .Values.envs.username.value }}
+            - name: {{ .Values.envs.password.name }}
+              value: {{ .Values.envs.password.value }}
+          ports:
+            - containerPort: {{ .Values.containerPort }}
+          volumeMounts:
+            - name: {{ .Values.volumes.dataVolume.name }}
+              mountPath: {{ .Values.volumes.dataVolume.mountPath }}
+      volumes:
+        - name: {{ .Values.volumes.dataVolume.name }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.name }}-pvc
