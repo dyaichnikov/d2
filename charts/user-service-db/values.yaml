@@ -29,7 +29,7 @@ volumes:
   dataVolume:
     name: "data-volume"
     mountPath: "/var/lib/postgresql/data"
-    hostPath: ""
+    hostPath: "/mnt/data"
 
 exposedPort: 5432
 clusterIP: "None"

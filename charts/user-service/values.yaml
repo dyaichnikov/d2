@@ -1,0 +1,5 @@
+name: "user-service"
+
+rreplicas: 1
+
+image: "user-service"

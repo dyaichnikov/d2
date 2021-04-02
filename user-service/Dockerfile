@@ -1,4 +1,4 @@
-FROM maven:3.6.1
+FROM maven:3.6.1 AS build
 COPY . /usr/src
 WORKDIR /usr/src
 RUN mvn clean package -pl :user-service -am
