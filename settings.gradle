@@ -1,0 +1,3 @@
+rootProject.name = 'image-service'
+include 'image-service-app'
+include 'image-service-api'
