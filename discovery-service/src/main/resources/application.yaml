@@ -1,0 +1,10 @@
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: discovery-service
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

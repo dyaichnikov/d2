@@ -2,4 +2,4 @@ spring:
   main:
     banner-mode: off
   application:
-    name: user-service
+    name: api-gateway

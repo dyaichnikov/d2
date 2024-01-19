@@ -1,0 +1,18 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka/"
+
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: user_route
+            uri: "lb://user-service"
+            predicates:
+              - Path=/users/**
+          - id: image_route
+            uri: "lb://image-service"
+            predicates:
+              - Path=/images/**
