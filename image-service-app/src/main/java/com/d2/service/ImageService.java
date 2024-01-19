@@ -17,7 +17,7 @@ public class ImageService {
     private final ImageRepository imageRepository;
 
     @Transactional
-    public UUID create(ImageRequest body, UUID userId) {
+    public UUID create(final ImageRequest body, final UUID userId) {
         final var image = imageMapper.to(body, userId);
         // TODO: add s3 file upload logic
         final var savedImage = imageRepository.save(image);

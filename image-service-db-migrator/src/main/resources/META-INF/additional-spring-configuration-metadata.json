@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "db.url",
+      "type": "java.lang.String",
+      "description": "URL of the database."
+    },
+    {
+      "name": "db.user",
+      "type": "java.lang.String",
+      "description": "User to connect to the database."
+    },
+    {
+      "name": "db.password",
+      "type": "java.lang.String",
+      "description": "Password to connect to the database."
+    },
+    {
+      "name": "db.schema",
+      "type": "java.lang.String",
+      "description": "Schema name."
+    }
+  ]
+}

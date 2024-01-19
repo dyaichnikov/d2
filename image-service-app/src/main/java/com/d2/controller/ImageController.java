@@ -14,7 +14,6 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping(value = ImageController.IMAGES_URI_PREFIX,
-        consumes = MediaType.APPLICATION_JSON_VALUE,
         produces = MediaType.APPLICATION_JSON_VALUE
 )
 @RequiredArgsConstructor
@@ -24,8 +23,8 @@ public class ImageController {
 
     private final ImageService imageService;
 
-    @PostMapping
-    public ResponseEntity<Void> create(@RequestParam("userId") UUID userId, @Valid @RequestBody ImageRequest body) throws URISyntaxException {
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> create(@RequestParam("userId") final UUID userId, @Valid @RequestBody final ImageRequest body) throws URISyntaxException {
         final var id = imageService.create(body, userId);
 
         return ResponseEntity.created(new URI("%s/%s".formatted(IMAGES_URI_PREFIX, id)))

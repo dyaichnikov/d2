@@ -14,25 +14,27 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-@Table(name = "images")
+@Table(name = "users")
 @Setter
 @Getter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Image {
+public class User {
 
     @Id
     @GeneratedValue
+    @EqualsAndHashCode.Include
     private UUID id;
 
     @NotNull
-    private String path;
-
-    @Size(max = 2200)
-    private String description;
+    private String firstName;
 
     @NotNull
-    private Instant uploadDate = Instant.now();
+    private String lastName;
 
     @NotNull
-    private UUID userId;
+    @Size(max = 320)
+    private String email;
+
+    @NotNull
+    private Instant regDate = Instant.now();
 }

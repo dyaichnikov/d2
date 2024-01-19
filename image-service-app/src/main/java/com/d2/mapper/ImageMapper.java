@@ -9,5 +9,5 @@ import java.util.UUID;
 @Mapper
 public interface ImageMapper {
 
-    Image to(ImageRequest source, UUID userId);
+    Image to(final ImageRequest source, final UUID userId);
 }
